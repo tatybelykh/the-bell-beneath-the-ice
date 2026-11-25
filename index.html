@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1620">
+  <meta name="description" content="Find Mara, solve eight clues and decide how winter ends in Greywick. An interactive mystery with eight winter idioms for A2 English learners.">
+  <title>The Bell Beneath the Ice</title>
+  <link rel="preload" as="image" href="./art/greywick.webp">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./story.js" defer></script>
+  <script src="./game.js" defer></script>
+</head>
+<body data-view="cover">
+  <header class="site-header">
+    <div class="bar wrap">
+      <div class="wordmark"><span class="crest" aria-hidden="true"></span> Greywick</div>
+      <a class="button button-quiet community-link" href="https://vk.ru/braveandcuriousenglish" lang="ru" target="_blank" rel="noopener noreferrer">ВСЛУХ Lexically в ВК</a>
+      <div class="header-actions" id="game-controls" hidden>
+        <button type="button" class="button button-quiet journal-button" id="open-notebook">
+          Case notes <span id="note-count" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="button button-quiet" id="restart-game" aria-haspopup="dialog">Start over</button>
+      </div>
+    </div>
+  </header>
+  <main id="game">
+    <section class="cover" aria-labelledby="cover-title">
+      <div class="cover-inner wrap">
+        <div class="cover-copy">
+          <p class="eyebrow cover-type">A winter mystery</p>
+          <h1 id="cover-title">The Bell <em>Beneath the Ice</em></h1>
+          <p>In Greywick, a bell under the ice brings spring. Today the bell is silent. Mara, the woman who rings it, is missing.</p>
+          <p>Find her before dark.</p>
+          <div class="cover-actions">
+            <button type="button" class="button button-primary" data-action="begin">Enter Greywick</button>
+            <p class="session-info">A2 English <span aria-hidden="true">·</span> 15–20 min</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <dialog id="notebook" class="notebook" aria-labelledby="notebook-title">
+    <div class="dialog-inner">
+      <div class="dialog-heading">
+        <h2 id="notebook-title">Case notes</h2>
+        <form method="dialog"><button class="button button-quiet" autofocus>Close</button></form>
+      </div>
+      <div id="notebook-content"></div>
+      <div class="dialog-footer">
+        <button type="button" class="button button-quiet" id="restart-request">Start a new case</button>
+      </div>
+    </div>
+  </dialog>
+  <dialog id="restart-dialog" class="confirm" aria-labelledby="restart-title" aria-describedby="restart-info">
+    <form class="dialog-inner" method="dialog">
+      <h2 id="restart-title">Start over?</h2>
+      <p id="restart-info">You’ll start from the beginning and find the clues again.</p>
+      <div class="dialog-actions">
+        <button class="button button-quiet" value="cancel" autofocus>Keep playing</button>
+        <button class="button button-primary" value="restart">Start over</button>
+      </div>
+    </form>
+  </dialog>
+  <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+</body>
+</html>
